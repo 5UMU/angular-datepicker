@@ -30,8 +30,7 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-eslint": "*",
-    "grunt-jscs": "*",
-    "husky": "*"
+    "grunt-jscs": "*"
   },
   "author": {
     "name": "Filippo Oretti",
