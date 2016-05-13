@@ -189,7 +189,7 @@
 
             $scope.year = Number($scope.year) + 1;
           }
-          , setInputValue = function setInputValue() {
+          , setInputValue = function setInputValue(initial) {
 
             if ($scope.isSelectableMinDate($scope.year + '/' + $scope.monthNumber + '/' + $scope.day) &&
                 $scope.isSelectableMaxDate($scope.year + '/' + $scope.monthNumber + '/' + $scope.day)) {
@@ -204,8 +204,10 @@
                 thisInput.val(modelDate);
               }
 
-              thisInput.triggerHandler('input');
-              thisInput.triggerHandler('change');//just to be sure;
+              if (!initial){
+                thisInput.triggerHandler('input');
+                thisInput.triggerHandler('change');//just to be sure;
+              }
             } else {
 
               return false;
@@ -356,7 +358,7 @@
 
               if ($scope.dateSetHidden !== 'true') {
 
-                setInputValue();
+                setInputValue(true);
               }
               checkAndToggleVisibility();
             }
