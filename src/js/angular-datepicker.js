@@ -203,9 +203,10 @@
 
                 thisInput.val(modelDate);
               }
+              
+              thisInput.triggerHandler('input');
 
               if (!initial){
-                thisInput.triggerHandler('input');
                 thisInput.triggerHandler('change');//just to be sure;
               }
             } else {
